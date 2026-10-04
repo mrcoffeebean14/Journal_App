@@ -1,7 +1,6 @@
 package com.mrcoffeebean.journalapp.controller;
 
 import java.util.List;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,16 +10,17 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.mrcoffeebean.journalapp.entity.UserEntity;
 import com.mrcoffeebean.journalapp.services.UserEntityService;
+import lombok.RequiredArgsConstructor;
 
 @RestController
 @RequestMapping("/api/user")
+@RequiredArgsConstructor 
 public class UserEntryController {
 
-    @Autowired
-    private UserEntityService userEntityService;
+    
+    private final UserEntityService userEntityService;
 
     // Get all users
     @GetMapping

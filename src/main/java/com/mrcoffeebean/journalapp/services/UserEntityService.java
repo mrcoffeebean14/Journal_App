@@ -2,21 +2,19 @@ package com.mrcoffeebean.journalapp.services;
 
 import java.util.List;
 import java.util.Optional;
-
 import org.bson.types.ObjectId;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-
 import com.mrcoffeebean.journalapp.Repository.UserEntityRepo;
 import com.mrcoffeebean.journalapp.entity.UserEntity;
+import lombok.RequiredArgsConstructor;
 
 @Service
+@RequiredArgsConstructor 
 public class UserEntityService {
 
-    @Autowired
-    private UserEntityRepo userEntityRepo;
+    private final UserEntityRepo userEntityRepo;
 
     // Get all users
     public ResponseEntity<List<UserEntity>> getAllUsers() {

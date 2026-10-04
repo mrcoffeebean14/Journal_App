@@ -1,26 +1,23 @@
 package com.mrcoffeebean.journalapp.services;
 
 import org.bson.types.ObjectId;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import java.util.List;
-import java.util.Optional;
-
 import com.mrcoffeebean.journalapp.Repository.JournalEntityRepo;
 import com.mrcoffeebean.journalapp.Repository.UserEntityRepo;
 import com.mrcoffeebean.journalapp.entity.JournalEntity;
 import com.mrcoffeebean.journalapp.entity.UserEntity;
 
+import lombok.RequiredArgsConstructor;
+
 @Component
+@RequiredArgsConstructor 
 public class JournalEntityService {
 
-    @Autowired
-    private JournalEntityRepo journalEntityRepo;
-
-    @Autowired 
-    private UserEntityRepo userEntityRepo;
+    private final JournalEntityRepo journalEntityRepo;
+    private final UserEntityRepo userEntityRepo;
 
 
     // show all Journal published by username
